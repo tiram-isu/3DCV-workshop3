@@ -375,7 +375,7 @@ As shown in the tables, these are the results for each tool:
 - SPANN3R: Better results for smaller confidence thresholds, but a lot of misplaced geometry and worse results than DUST3R and MAST3R
 - VGGT: Many misplaced points, object hard to recognize
 
-In general, traditional feature-based tools reconstructed the geometry more accurately, but they also used more input images. With the same number of input images, the model-based tools might perform on par or better.
+In general, traditional feature-based tools reconstructed the geometry more accurately, but they also used more input images.
 
 The crochet pattern was reconstructed relatively well by all tools (at least in parts of the object) demonstrating general robustness to texture. However, all methods struggled with the reflective eyes of the dinosaur, suggesting that specular or non-Lambertian surfaces remain a challenge. To explore this further, we also conducted experiments using reflective dice.
 
@@ -602,35 +602,40 @@ These are the observed results for each tested tool:
     - Delaunay Mesh Reconstruction seems to be less accurate than Poisson and has no textures, but does not have the same missing areas
 - Polycam: Again, Polycam produces the best results with accurate geometry and textures
 - Meshroom: The geometry and textures are reconstructed quite accurately, but there are some white spots
-- MAST3R: The geometry is less accurate than the ones of other tools, the textures on the dice are blurry and the background is very patchy
+- MAST3R: The geometry is less accurate than the ones of other tools, the textures on the dice are blurry and the background is very patchy <em>(Note: MAST3R generated the model using only 12 images)</em>
 
 The results were better than expected. Although view-dependent effects are baked into the model, the scene was still reconstructed with reasonable accuracy. These effects result in visually interesting artifacts, which may be desirable in certain use cases or artistic applications.
 
 ## Findings
+<em>Note: Due to time constraints and the nature of the workshop, the reconstructions of whole scenes could not be sufficiently tested and is therefore left out.</em>
+
 ### Traditional Tools 
-all different harddware so not comparable
-- Colmap: takes longest, good results for dense point cloud, but not mesh, more difficult to use
-- Polycam: consistently best results for small objects, not as suited for scenes/rooms, no camera control
-- Meshroom: might require background removal, didn't output texture in this case, but generally able to
+Overall, traditional feature-based reconstruction tools delivered solid results. Colmap produced accurate point clouds, but struggled with mesh quality and requires some getting used to due to its more complex interface. It also took the longest time to produce a dence point cloud and mesh.\
+Polycam consistently delivered the best results for small objects with minimal user effort and an intuitive interface.\
+Meshroom performed well but required background removal in some cases.
+
 ### AI Models
-- DUST3R: takes long, but wasn't using GPU, large part of background reconstructed
-- MAST3R: camera needs to be moved around object or background removed, doesn't work with transparent background, best results from AI models, "patchy" meshes
-- SPANN3R: better results with lower confidence threshold, but disfigured object
-- VGGT: many floaters, no texture ?
+The AI-based tools varied in quality and performance. DUST3R performed relatively well and reconstructed not only the object but a significant portion of the background. Since it was not using the correct GPU it took significantly longer than the other AI-based tools.\
+MAST3R produced the most accurate and complete reconstructions among the AI tools but required either a camera orbiting the object or a completely uniform background with no features. While it struggled with generating clean meshes, it still outperformed the others in overall detail.\
+SPANN3R produced better results the lower the confidence threshold, but produced disfigured and unreliable geometry.\
+VGGT showed limited performance, producing many floating artifacts, inaccurate geometry and colors only in some places.
 
-### Accuracy and consistency of AI models across different examples
-### Computational requirements of AI models
-## Limitations in specific use cases
-## Real-time Capabilities
-- none of the tools tested
-- traditional methods are faster with the same number of (few) images, but results are much worse
+Still, all AI models but VGGT were tested using only a quarter of the test images compared to the traditional tools. Using the same number of input images might lead to results on par or better than traditional methods.\
+In our experiments, AI tools were also faster, but this might not be true when using the same number of input images. Additionally, they require more hardware resources, particularly NVIDIA GPUs, making them less accessible.
 
+### Limitations in specific use cases
+Certain limitations emerged across both traditional and AI-based methods. 
+Both variations struggled with non-lambertian effects, but traditional tools performed a bit more robustly in that regard. They also produced better and more consistent results in terms of geometry, but also require more input images.
 
-## Traditional vs. Model-based Methods
-- AI models work well with fewer input images, but resulting pointclouds/meshes are often "patchy" and not as detailed as those from traditional methods
--> resulting point cloud obtained more quickly than with traditional methods like Colmap and might be sufficient for some applications like NeRF or 3DGS, but these methods still require many input images, which still have to be captured
-- AI models faster than some traditional methods
+### Real-time Capabilities
+None of the tools tested are capable of real-time 3D reconstruction. AI methods can produce results more quickly since they are capable of generating a reasonable reconstruction with much fewer input images, but achieving high-quality reconstructions still requires considerable processing time for both traditional and AI-based approaches.
 
-## The Future of 3D Object Reconstruction in the Context of AI Advancements
+## Conclusion
+This project compared traditional and AI-based tools for 3D object reconstruction, highlighting their strengths, limitations, and practical trade-offs. Traditional methods such as COLMAP and Meshroom generally produced more accurate and consistent geometry, especially when provided with many input images. However, they are slower, more complex to use, and require substantial data capture. In contrast, recent AI-based tools like DUST3R and MAST3R were able to generate plausible reconstructions from as few as 5–10 images, although the results were often patchy or less detailed.\
+These reconstructions might be sufficient for further processing like the creation of NeRFs or 3D Gaussian Splatting scenes. However, these methods still require many input images, so it is questionable if they currently provide an advantage in this context over traditional feature-based methods like Colmap.
+
+Both approaches struggled with non-Lambertian surfaces, such as reflections or transparency, and none of the tested tools supported real-time reconstruction. While AI methods can be faster in some cases due to their ability to infer geometry from limited data, high-quality outputs from both categories still require processing time and good input conditions.
+
+As AI models become more robust and efficient, they might be able to produce high-quality outputs from few input images with fast processing time, providing a great advantage over traditional methods. This would make 3D reconstructions more accessible and applicable across fields such as AR/VR, robotics, and digital content creation.
 
 

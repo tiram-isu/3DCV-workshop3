@@ -183,10 +183,94 @@ For Polycam, background removal is generally not critical since the object can o
     <tr>
     <tr>
         <td>Colmap Fused</td>
-        <td><img src="./renders/gt/1750926707525.jpg"></td>
+        <td><img src="./renders/gt/1750926707525.png"></td>
         <td><img src="./renders/colmap_fused/1750926707525_cam.png"></td>
-        <td><img src="./renders/gt/1750926721554.jpg"></td>
+        <td><img src="./renders/gt/1750926721554.png"></td>
         <td><img src="./renders/colmap_fused/1750926721554_cam.png"></td>
+    </tr>
+    <tr>
+        <td>Colmap Poisson</td>
+        <td><img src="./renders/gt/1750926707525.png"></td>
+        <td><img src="./renders/colmap_poisson/1750926707525_cam.png"></td>
+        <td><img src="./renders/gt/1750926721554.png"></td>
+        <td><img src="./renders/colmap_poisson/1750926721554_cam.png"></td>
+    </tr>
+    <tr>
+        <td>Colmap Delaunay</td>
+        <td><img src="./renders/gt/1750926707525.png"></td>
+        <td><img src="./renders/colmap_delaunay/1750926707525_cam.png"></td>
+        <td><img src="./renders/gt/1750926721554.png"></td>
+        <td><img src="./renders/colmap_delaunay/1750926721554_cam.png"></td>
+    </tr>
+    <tr>
+        <td>Polycam</td>
+        <td><img src="./renders/gt/1750926707525.png"></td>
+        <td><img src="./renders/polycam/1750926707525_cam.png"></td>
+        <td><img src="./renders/gt/1750926721554.png"></td>
+        <td><img src="./renders/polycam/1750926721554_cam.png"></td>
+    </tr>
+    <tr>
+        <td>Meshroom</td>
+        <td><img src="./renders/gt/1750926707525.png"></td>
+        <td><img src="./renders/meshroom/1750926707525_cam.png"></td>
+        <td><img src="./renders/gt/1750926721554.png"></td>
+        <td><img src="./renders/meshroom/1750926721554_cam.png"></td>
+    </tr>
+    <tr>
+        <td>Dust3r Point Cloud</td>
+        <td><img src="./renders/gt/1750926707525.png"></td>
+        <td><img src="./renders/dust3r_pc/1750926707525_cam.png"></td>
+        <td><img src="./renders/gt/1750926721554.png"></td>
+        <td><img src="./renders/dust3r_pc/1750926721554_cam.png"></td>
+    </tr>
+    <tr>
+        <td>Dust3r Mesh</td>
+        <td><img src="./renders/gt/1750926707525.png"></td>
+        <td><img src="./renders/dust3r_mesh/1750926707525_cam.png"></td>
+        <td><img src="./renders/gt/1750926721554.png"></td>
+        <td><img src="./renders/dust3r_mesh/1750926721554_cam.png"></td>
+    </tr>
+    <tr>
+        <td>Mast3r Point Cloud</td>
+        <td><img src="./renders/gt/1750926707525.png"></td>
+        <td><img src="./renders/mast3r_pc/1750926707525_cam.png"></td>
+        <td><img src="./renders/gt/1750926721554.png"></td>
+        <td><img src="./renders/mast3r_pc/1750926721554_cam.png"></td>
+    </tr>
+    <tr>
+        <td>Mast3r Mesh</td>
+        <td><img src="./renders/gt/1750926707525.png"></td>
+        <td><img src="./renders/mast3r_mesh/1750926707525_cam.png"></td>
+        <td><img src="./renders/gt/1750926721554.png"></td>
+        <td><img src="./renders/mast3r_mesh/1750926721554_cam.png"></td>
+    </tr>
+    <tr>
+        <td>Spann3r 0.01</td>
+        <td><img src="./renders/gt/1750926707525.png"></td>
+        <td><img src="./renders/spann3r0.01/1750926707525_cam.png"></td>
+        <td><img src="./renders/gt/1750926721554.png"></td>
+        <td><img src="./renders/spann3r0.01/1750926721554_cam.png"></td>
+    </tr>
+    <tr>
+        <td>Spann3r 0.001</td>
+        <td><img src="./renders/gt/1750926707525.png"></td>
+        <td><img src="./renders/spann3r0.001/1750926707525_cam.png"></td>
+        <td><img src="./renders/gt/1750926721554.png"></td>
+        <td><img src="./renders/spann3r0.001/1750926721554_cam.png"></td>
+    </tr>
+    <tr>
+        <td>Spann3r 0.0001</td>
+        <td><img src="./renders/gt/1750926707525.png"></td>
+        <td><img src="./renders/spann3r0.0001/1750926707525_cam.png"></td>
+        <td><img src="./renders/gt/1750926721554.png"></td>
+        <td><img src="./renders/spann3r0.0001/1750926721554_cam.png"></td>
+    </tr>
+    <tr>
+        <td>VGGT</td>
+        <td><img src="./renders/gt/1750926707525.png"></td>
+        <td><img src="./renders/vggt/1750926707525_cam.png"></td>
+        <td><img src="./renders/gt/1750926721554.png"></td>
+        <td><img src="./renders/vggt/1750926721554_cam.png"></td>
     </tr>
 </table>
 

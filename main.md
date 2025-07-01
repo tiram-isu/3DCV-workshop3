@@ -614,8 +614,33 @@ These are the observed results for each tested tool:
 
 The results were better than expected. Although view-dependent effects are baked into the model, the scene was still reconstructed with reasonable accuracy. These effects result in visually interesting artifacts, which may be desirable in certain use cases or artistic applications.
 
+### Scene (tram model)
+For this scene, we once again used Polycam to capture frames of a test tram scene. The scene is loosely based on a tram and was constructed as a simplified replica. An impression of the setup can be seen below <em>(Note: this is not the exact configuration used during image capture)</em>:
+<img src="./scene/2217-1024.jpg">
+
+
+However, Polycam's reconstruction quality was poor: Some areas are severely distorted or missing completely, windows are partially filled in with a mix of reflected scene elements and the background room, while their central parts are missing altogether.
+
+Interestingly, while the geometry is highly inaccurate, the textures on the existing geometry are relatively well-preserved. Examples of the reconstruction are shown below:
+<table>
+    <tr>
+        <td><img src="./scene/polycam.png"></td>
+        <td><img src="./scene/polycam2.png"></td>
+    </tr>
+</table>
+
+The poor reconstruction quality is likely due to the characteristics of the scene. Strong directional light sources directly above and behind the scene introduced significant highlights and glare in the captured images. In addition, numerous reflective surfaces such as windows and screens reflected both the light and the surrounding environment, depending on the camera angle. Thin structures, like the poles holding up the roof, and relatively large textureless surfaces further complicated the reconstruction process.
+
+<table>
+    <tr>
+        <td><img src="./scene/output_0001.png"><br>Reflective surfaces (mainly the roof and monitor), light from behind</td>
+        <td><img src="./scene/output_0027.png"><br>Windows that partly reflect the scene in front while also showing the room behind</td>
+        <td><img src="./scene/output_0103.png"><br>Thin poles</td>
+</table>
+
+Due to time constraints, we were unable to re-capture the scene or experiment with different scenes or the other reconstruction tools mentioned earlier.
+
 ## Findings
-<em>Note: Due to time constraints and the nature of the workshop, the reconstructions of whole scenes could not be sufficiently tested and is therefore left out.</em>
 
 ### Traditional Tools 
 Overall, traditional feature-based reconstruction tools delivered solid results. Colmap produced accurate point clouds, but struggled with mesh quality and requires some getting used to due to its more complex interface. It also took the longest time to produce a dence point cloud and mesh.\
